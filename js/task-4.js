@@ -5,13 +5,12 @@
 // При сабміті форми виведи об'єкт із введеними даними в консоль і очисти значення полів форми методом reset.
 
 const formArea = document.querySelector(".login-form");
-console.log(formArea);
 
 formArea.addEventListener('submit', event => {
     event.preventDefault();
     const trimEmail = event.target.elements.email.value.trim();
     const trimPass = event.target.elements.password.value.trim();
-    const testVal = trimEmail !== "" || trimPass !== "";
+    const testVal = trimEmail !== "" && trimPass !== "";
     const finalObj = {};
     if (!testVal) {
         alert("All form fields must be filled in");
