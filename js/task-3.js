@@ -1,7 +1,7 @@
-// Напиши скрипт, який під час набору тексту в інпуті input#name - input(подія input) підставляє його поточне значення в span#name - output як ім’я для привітання.Обов’язково очищай значення в інпуті по краях від пробілів.Якщо інпут порожній або містить лише пробіли, то замість імені у спан має підставлятися рядок "Anonymous". 
 
 const inputVal = document.querySelector("#name-input");
 const span = document.querySelector("#name-output");
+
 
 inputVal.addEventListener('input', event => {
     const trimmedValue = event.currentTarget.value.trim(); // Обрізаємо пробіли
@@ -11,3 +11,12 @@ inputVal.addEventListener('input', event => {
         span.textContent = trimmedValue;
     }
 });
+
+const title = document.querySelector("h1");
+
+inputVal.style.margin = "0 auto 0 auto";
+inputVal.style.alightSelf = "center"
+inputVal.style.width = "360px";
+inputVal.style.height = "40px";
+
+title.style.margin = "0 auto";

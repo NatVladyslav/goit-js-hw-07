@@ -1,16 +1,3 @@
-// Напиши скрипт створення й очищення колекції елементів з наступним функціоналом.
-// Є input, у який користувач вводить бажану кількість елементів.Після натискання на кнопку Create має рендеритися(додаватися в DOM) колекція з відповідною кількістю елементів і очищатися значення в інпуті.При повторному натисканні на кнопку Create поверх старої колекції має рендеритись нова.Після натискання на кнопку Destroy колекція елементів має очищатися.
-
-// Після натискання користувачем на кнопку Create треба провалідувати значення в input, воно має бути в межах від 1 до 100 включно. Тільки якщо воно задоволяє умову, мають додаватися нові <div> елементи в DOM.
-
-// Для рендеру елементів на сторінці створи функцію createBoxes(amount), яка приймає один параметр — число, що зберігає кількість елементів для рендеру.
-
-// Функція має створювати стільки <div> елементів, скільки вказано в параметрі amount і додавати їх у DOM дочірніми елементами для div#boxes.
-
-// Розміри першого <div> елемента мають бути 30px на 30px.
-// Кожен наступний елемент повинен бути ширшим і вищим від попереднього на 10px.
-// Усі елементи повинні мати випадковий колір фону. Використовуй готову функцію getRandomHexColor() для отримання випадкового кольору.
-// Для очищення колекції після натискання на кнопку Destroy створи функцію destroyBoxes(), яка очищає вміст div#boxes, у такий спосіб видаляючи всі створені елементи.
 
 const boxesDiv = document.querySelector("#boxes");
 const controlsDiv = document.querySelector("#controls");
@@ -36,7 +23,7 @@ createBtn.addEventListener('click', () => {
   const amount = parseInt(inputAmount.value);
   if (amount >= 1 && amount <= 100) {
     createBoxes(amount);
-    inputAmount.value = ""; // Clear input after creating boxes
+    inputAmount.value = ""; 
   } else {
     alert('Please enter a number between 1 and 100.');
   }
@@ -45,3 +32,62 @@ function destroyBoxes(){
 boxesDiv.querySelectorAll("div").forEach(element => element.remove());
 }
 destroyBtn.addEventListener("click", destroyBoxes);
+
+destroyBtn.style.padding = "8px 16px";
+destroyBtn.style.borderRadius = "8px";
+destroyBtn.style.width = "120px";
+destroyBtn.style.height = "40px";
+destroyBtn.style.backgroundColor = "#ff4e4e";
+destroyBtn.style.border = "none";
+destroyBtn.style.color = "#fff";
+
+ destroyBtn.addEventListener('mouseenter', () => {
+            destroyBtn.style.backgroundColor = '#ff7070';
+        });
+
+        destroyBtn.addEventListener('mouseleave', () => {
+            destroyBtn.style.backgroundColor = '#ff4e4e';
+        });
+
+createBtn.style.borderRadius = "8px";
+createBtn.style.padding = "8px 16px";
+createBtn.style.width = "120px";
+createBtn.style.height = "40px";
+createBtn.style.backgroundColor = "#4e75ff";
+createBtn.style.border = "none";
+createBtn.style.color = "#fff";
+createBtn.style.marginRight = "16px"
+
+        createBtn.addEventListener('mouseenter', () => {
+            createBtn.style.backgroundColor = '#6c8cff';
+        });
+
+        createBtn.addEventListener('mouseleave', () => {
+            createBtn.style.backgroundColor = '#4e75ff';
+        });
+
+controlsDiv.style.borderRadius = "8px";
+controlsDiv.style.padding = "20px";
+controlsDiv.style.width = "486px";
+controlsDiv.style.height = "104px";
+controlsDiv.style.backgroundColor = "#f6f6fe";
+controlsDiv.style.margin = "0 auto";
+
+inputAmount.style.border = "1px solid #808080";
+inputAmount.style.borderRadius = "8px";
+inputAmount.style.padding = "8px 50px";
+inputAmount.style.width = "150px";
+inputAmount.style.height = "40px";
+inputAmount.style.marginRight = "16px"
+
+boxesDiv.style.borderRadius = "8px";
+boxesDiv.style.padding = "32px";
+boxesDiv.style.width = "486px";
+boxesDiv.style.backgroundColor = "#f6f6fe";
+boxesDiv.style.display = "flex";
+boxesDiv.style.flexDirection = "row";
+boxesDiv.style.columnGap = "40px";
+boxesDiv.style.rowGap = "10px";
+boxesDiv.style.flexWrap = "wrap";
+boxesDiv.style.margin = "0 auto";
+
