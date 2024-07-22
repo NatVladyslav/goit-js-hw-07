@@ -11,13 +11,15 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 function createBoxes(amount) {  
+  const fragment = document.createDocumentFragment();
   for (let i = 0; i < amount; i++) {
     const box = document.createElement('div');
     box.style.width = `${30 + i * 10}px`;
     box.style.height = `${30 + i * 10}px`;
     box.style.backgroundColor = getRandomHexColor();
-    boxesDiv.appendChild(box);
+    fragment.append(box);
   }
+  boxesDiv.append(fragment);
 }
 createBtn.addEventListener('click', () => {
   const amount = parseInt(inputAmount.value);
